@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="44fd96f4-7a62-44db-bd29-7cfec5733b80" name="php.scweb.ca" url="http://plathiya.scweb.ca/">
+        <fileTransfer rootFolder="/home/plathiya/public_html/blog_oop" accessType="SFTP" host="php.scweb.ca" port="22" sshConfigId="7344c0fd-8b2e-4983-bed6-1a84662b9ab8" sshConfig="plathiya@php.scweb.ca:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
