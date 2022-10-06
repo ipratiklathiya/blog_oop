@@ -7,42 +7,42 @@ require_once("../includes/bootstrap.php");
  */
 class DatabaseTest {
 
-	private $conn;
+    private $conn;
 
-	/**
-	 * DatabaseTest constructor.
-	 * @param Database $dbc
-	 */
-	public function __construct(Database $dbc) {
-		$this->conn = $dbc;
-	}
+    /**
+     * DatabaseTest constructor.
+     * @param Database $dbc
+     */
+    public function __construct(Database $dbc) {
+        $this->conn = $dbc;
+    }
 
-	public function tearDown() {
-	}
+    public function tearDown() {
+    }
 
-	/**
-	 * @return bool
-	 */
-	public function testInsert() {
-		$result = $this->conn->sqlQuery("INSERT INTO `logins` VALUES(0, 'testuser', 'testpass')", "");
-		return ($result->rowCount() == 1) ? true : false;
-	}
+    /**
+     * @return bool
+     */
+    public function testInsert() {
+        $result = $this->conn->sqlQuery("INSERT INTO `logins` VALUES(0, 'testuser', 'testpass')", "");
+        return ($result->rowCount() == 1) ? true : false;
+    }
 
-	/**
-	 * @return bool
-	 */
-	public function testDelete() {
-		$result = $this->conn->sqlQuery("DELETE FROM `logins` WHERE `username` = :username", ['username' => 'testuser']);
-		return ($result->rowCount() == 1) ? true : false;
-	}
+    /**
+     * @return bool
+     */
+    public function testDelete() {
+        $result = $this->conn->sqlQuery("DELETE FROM `logins` WHERE `username` = :username", ['username' => 'testuser']);
+        return ($result->rowCount() == 1) ? true : false;
+    }
 
-	/**
-	 * @return bool
-	 */
-	public function testFetch() {
-		$result = $this->conn->fetchArray("SELECT * FROM `logins`;");
-		return ($result) ? true : false;
-	}
+    /**
+     * @return bool
+     */
+    public function testFetch() {
+        $result = $this->conn->fetchArray("SELECT * FROM `logins`;");
+        return ($result) ? true : false;
+    }
 }
 
 $databaseTest = new DatabaseTest($dbc);
@@ -58,3 +58,4 @@ echo "<br>";
 echo "Test #3 TestDelete ...";
 echo $databaseTest->testDelete() ? "Test passed" : "Test Failed";
 echo "<br>";
+?>
